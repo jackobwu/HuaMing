@@ -27,7 +27,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
             HuaMingApp()
         }
     }
@@ -35,7 +34,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun HuaMingApp() {
-
     val navController = rememberNavController()
 
     HuamingTheme {
@@ -49,7 +47,7 @@ fun HuaMingApp() {
                 Modifier.padding(padding) )
             {
                 composable("home") { HomeScreen()}
-                composable("profile") { ProfieScreen()}
+                composable("profile") { ProfileScreen()}
             }
         }
     }
@@ -60,8 +58,7 @@ fun HuaMingApp() {
 fun MingTopBar() {
     TopAppBar(
         title = {
-            Text(text = "HuaMing")
-        },
+            Text(text = "HuaMing") },
         backgroundColor = MaterialTheme.colors.primary,
         contentColor = androidx.compose.ui.graphics.Color.White,
         elevation = 10.dp
@@ -107,6 +104,8 @@ fun HuaMingBottomNavigation(navController: NavHostController, modifier: Modifier
     }
 }
 
+
+
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
     Column(modifier) {
@@ -118,8 +117,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ProfieScreen(modifier: Modifier = Modifier) {
-
+fun ProfileScreen(modifier: Modifier = Modifier) {
+    Text(text = "Hello", modifier.padding(50.dp))
 }
 
 @Composable
@@ -153,3 +152,4 @@ fun DefaultPreview() {
         HuaMingApp()
     }
 }
+
