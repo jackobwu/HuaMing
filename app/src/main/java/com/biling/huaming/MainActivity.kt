@@ -53,7 +53,7 @@ fun HuaMingApp() {
         ) {
             padding ->
             NavHost(
-                navController, startDestination = "home",
+                navController = navController, startDestination = "home",
                 Modifier.padding(padding) )
             {
                 composable("home") { HomeScreen()}
