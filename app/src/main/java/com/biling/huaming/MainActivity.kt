@@ -108,9 +108,10 @@ fun HuaMingBottomNavigation(navController: NavHostController, modifier: Modifier
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
-    Column(modifier) {
-        NewsCard(
-            modifier
+    Column() {
+        Text("Alfred Sisley")
+        Text("3 minutes ago")
+        NewsCard(modifier
                 .fillMaxWidth()
                 .padding(10.dp))
     }
@@ -142,6 +143,12 @@ fun NewsCard( modifier: Modifier = Modifier ) {
             )
         }
     }
+}
+
+@Preview
+@Composable
+fun NewsCardPreview() {
+    NewsCard()
 }
 
 
