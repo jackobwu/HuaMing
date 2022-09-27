@@ -39,7 +39,7 @@ fun HuaMingApp() {
     HuamingTheme {
         Scaffold(
             topBar = { MingTopBar() },
-            bottomBar = { HuaMingBottomNavigation(navController) }
+            bottomBar = { MingBottomNavigation(navController) }
         ) {
             padding ->
             NavHost(
@@ -66,7 +66,7 @@ fun MingTopBar() {
 }
 
 @Composable
-fun HuaMingBottomNavigation(navController: NavHostController, modifier: Modifier = Modifier) {
+fun MingBottomNavigation(navController: NavHostController, modifier: Modifier = Modifier) {
     BottomNavigation(modifier) {
         BottomNavigationItem(
             icon = {
@@ -109,9 +109,8 @@ fun HuaMingBottomNavigation(navController: NavHostController, modifier: Modifier
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
     Column() {
-        Text("Alfred Sisley")
-        Text("3 minutes ago")
-        NewsCard(modifier
+        NewsCard(
+            modifier
                 .fillMaxWidth()
                 .padding(10.dp))
     }
@@ -151,6 +150,11 @@ fun NewsCardPreview() {
     NewsCard()
 }
 
+@Preview
+@Composable
+fun HomeScreenPreview() {
+    HomeScreen()
+}
 
 @Preview(showBackground = true)
 @Composable
